@@ -1,0 +1,19 @@
+<meta charset="UTF-8">
+<script>
+    function pulaLinha() {
+        document.write("<br>");
+    }
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+    function calculoGeracoes(anoInicial) {
+        var anoAtual = 2022;
+        var intervaloGeracoes = 28;
+        var anosAteAgora = anoAtual - anoInicial;
+        var geracoesAteAgora = anosAteAgora / intervaloGeracoes;
+        return Math.round(geracoesAteAgora);
+    }
+    mostra("Se passaram " +  calculoGeracoes(1500) +" gerações desde o ano 1500.")
+
+</script>
