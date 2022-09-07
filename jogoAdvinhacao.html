@@ -1,0 +1,32 @@
+<meta charset="UTF-8">
+<head>
+    <title>Advinhando o número sorteado</title>
+</head>
+<script>
+     function pulaLinha() {
+        document.write("<br>");
+    }
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+    function sorteia(n) {
+    return Math.round(Math.random() * n);
+    }
+    var numeroLimite = sorteia(parseInt(prompt("Digite o número que será usado para sortear um número até, no máximo, o número limite.")));
+    console.log(numeroLimite);
+    var chute = parseInt(prompt("Qual número você acha que é o número sorteado?"));
+    if(chute == numeroLimite) {
+        mostra("Você acertou!");
+    } else{
+        mostra("Você errou! O número pensado foi " + numeroLimite);
+        if(chute > numeroLimite) {
+            mostra("Você chutou um número que é maior que o número sorteado.");
+        } else {
+            mostra("Você chutou um número que é menor que o número sorteado.");
+        }
+    }
+    
+
+
+</script>
