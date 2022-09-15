@@ -1,0 +1,33 @@
+<meta charset="UTF-8">
+
+<h1>Receitas do Yan</h1>
+
+<script>
+    var ingredientes = [];
+    var quantidade = parseInt(prompt("Quantos ingredientes você vai adicionar?"));
+    var contador = 1;
+    while(contador <= quantidade) {
+        var achou = false;
+        var ingrediente = prompt("Informe o ingrediente " + contador)
+        if(contador != 1) {
+            /* esse if serve para verificar se o array tem mais de um item. Por que caso tiver, não faz sentido fazer a comparação.*/
+            for(i = 0; i < ingredientes.length; i++) {
+            /* se percorrer o array e observar que o ingrediente digitado é igual a uma das posições, o loop é quebrado.*/
+                if(ingrediente == ingredientes[i]) {
+                achou = true;
+                alert("Você já digitou esse ingrediente.")
+                break;
+                }
+            }
+            if(achou == false) {
+                /* se percorrer o array e ver que não tem item repetido, é adicionado o elemento que foi escrito anteriormente e incrementada a variável contador para que o loop se repita*/
+                ingredientes.push(ingrediente);
+                contador++;
+            }
+        } else {
+            /* se o array tiver menos de um ingrediente, é adicionado o ingrediente que foi diigitado no array e o contador é incrementado*/
+            ingredientes.push(ingrediente);
+            contador++;
+        }
+    }
+</script>

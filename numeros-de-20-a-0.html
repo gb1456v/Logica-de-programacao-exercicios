@@ -1,0 +1,20 @@
+<meta charset="UTF-8">
+<head>
+    <title>Números pares de 1 a 100</title>
+</head>
+<script>
+    function pulaLinha() {
+    document.write("<br>");
+    }
+
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+    var contador = 20;
+    while(contador >= 0) {
+        mostra(contador);
+        contador = contador - 1;
+    }
+    mostra("Fim");
+</script>

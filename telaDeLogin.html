@@ -1,0 +1,22 @@
+<meta charset="UTF-8">
+<script>
+    var loginCadastrado = "alura";
+    var senhaCadastrada = "alura321";
+    var tentativasTotais = 3;
+    var tentativaAtual = 1;
+    while (tentativaAtual <= tentativasTotais) {
+        var loginInformado = prompt("Informe seu login");
+        var senhaInformada = prompt("Informe sua senha");
+        if(loginCadastrado == loginInformado && senhaCadastrada == senhaInformada) {
+            alert("Bem-vindo ao sistema " + loginInformado);
+            tentativaAtual = 4;
+        } else {
+            if (tentativaAtual >= tentativasTotais) {
+                alert("Você não tem mais tentativas e foi bloqueado no sistema! Favor entrar em contato com o suporte.");
+            } else { 
+                alert("Você tem mais " + (tentativasTotais - tentativaAtual) + " tentativa(as)!");
+            }
+        }
+        tentativaAtual++;
+    }
+</script>

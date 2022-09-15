@@ -1,0 +1,64 @@
+<meta charset="UTF-8">
+<head>
+    <title>Advinha Mais
+    </title>
+</head>
+<body>
+    <input/>
+    <button>Compare com meu segredo</button>
+</body>
+<script>
+/* essa função verifica se o número digitado no input é um dos guardados no array "segredos". Ela primeiro percorre o array e compara o que foi digitado com cada um dos elementos do array. Se o usuário acertar, é exibido um popup e a variável "achou" é definida como true para que possa ser exibida uma mensagem se o usuário errou. Se o usuário errar, ou seja, a variável achou ser true, é exibida a mensagem que errou.*/
+    function verifica() {
+        var achou = false;
+        for(i = 0; i < segredos.length; i++) {
+            if(input.value == segredos[i]) {
+            alert("Você acertou!");
+            achou = true;
+            break;
+            }
+        }
+        if(achou == false) {
+            alert("Você errou!");
+        } 
+        input.value = "";
+        input.focus();
+    }
+    function sorteia() {
+        return Math.round(Math.random() * 10);
+    }
+    function sorteiaNumeros(quantidade) {
+        var segredos = [];
+        var numero = 1;
+        while(numero <= quantidade) {
+            numeroAleatorio = sorteia();
+            achou = false;
+            // sorteia um numero aleatorio usando a função sorteia();
+            if(numeroAleatorio != 0) {
+                for(i = 0;i < segredos.length; i++) {
+                // percorre o array que foi criado até o momento
+                    if(segredos[i] == numeroAleatorio) {
+                        achou = true;
+                        break;
+                        /* se o número gerado for igual a um dos números aleatórios já gerados ele vai parar de gerar números.*/
+                    }
+                }
+                if(achou == false) {
+                segredos.push(numeroAleatorio);
+                numero++;
+                /* se o numero gerado for diferente de um dos números já gerados, ou seja, a variável achou ser falsa, será gerado um novo número e o loop se repetirá*/
+                }    
+            }
+        }
+        return segredos;
+    }
+    var segredos = sorteiaNumeros(5);
+    console.log(segredos);
+    
+    //fim segredos
+    var input = document.querySelector("input");
+    var botao = document.querySelector("button");
+    input.focus();
+    botao.onclick = verifica;
+
+    </script>

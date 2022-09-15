@@ -1,0 +1,15 @@
+<meta charset="UTF-8">
+<script>
+     function pulaLinha() {
+    document.write("<br>");
+    }
+
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+    n = parseInt(prompt("Digite o número que quer a tabuada"));
+    for(var multiplicador = 1; multiplicador <= 10; multiplicador++) {
+        mostra(n + " vezes " + multiplicador + " é igual a " + (n * multiplicador));
+    }
+</script>
