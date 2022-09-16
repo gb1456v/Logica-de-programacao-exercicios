@@ -1,0 +1,17 @@
+<meta charset="UTF-8">
+<head>
+    <title>Primeiro uso canvas</title>
+</head>
+<body>
+    <canvas width="800" height="400"></canvas><!-- cria um quadro branco para que se possa desenhar na tela.-->
+</body>
+<script>
+    // chamando tela e criando um pincel.
+    var tela = document.querySelector("canvas");
+    var pincel = tela.getContext("2d");
+    //desenhando
+    pincel.fillStyle = "lightblue";
+    pincel.fillRect(0,0,600,400);
+
+
+</script>
