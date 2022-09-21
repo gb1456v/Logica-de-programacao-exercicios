@@ -1,0 +1,38 @@
+<meta charset="UTF-8">
+<head>
+    <title>Esquadro</title>
+</head>
+<body>
+    <canvas width="600" height="400"></canvas><!-- cria um quadro branco para que se possa desenhar na tela.-->
+</body>
+<script>
+    // chamando tela e criando um pincel.
+    var tela = document.querySelector("canvas");
+    var pincel = tela.getContext("2d");
+    //desenhando
+    
+    //retangulo
+    pincel.fillStyle = "green";
+    pincel.fillRect(0,0,600,400);
+    //losango
+    //triangulo um
+    pincel.fillStyle = "yellow";
+    pincel.beginPath();
+    pincel.moveTo(300,50);
+    pincel.lineTo(50,200);
+    pincel.lineTo(550,200);
+    pincel.fill();
+    //triangulo dois
+    pincel.beginPath();
+    pincel.moveTo(300,350);
+    pincel.lineTo(50,200);
+    pincel.lineTo(550,200);
+    pincel.fill();
+    //circulo
+    pincel.fillStyle = "darkblue";
+    pincel.beginPath();
+    pincel.arc(300,200,80,0,
+     2 * 3.14);
+    pincel.fill();
+
+</script>

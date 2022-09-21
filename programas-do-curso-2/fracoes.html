@@ -1,0 +1,33 @@
+<meta charset="UTF-8">
+<head>
+    <title>Usando funções</title>
+</head>
+<body>
+    <canvas width="600" height="400"></canvas><!-- cria um quadro branco para que se possa desenhar na tela.-->
+</body>
+<script>
+    // chamando tela e criando um pincel.
+    var tela = document.querySelector("canvas");
+    var pincel = tela.getContext("2d");
+    function desenhaQuadrado(x,y,cor) {
+        pincel.fillStyle = cor;
+        pincel.fillRect(x,y,50,50);
+    }
+    function desenhaBorda(x,y,cor) {
+        pincel.strokeStyle = cor;
+        pincel.strokeRect(x, y, 50, 50);
+
+    }
+    //desenhando
+    desenhaQuadrado(0,0,"darkgreen");
+    desenhaBorda(0,0,"black");
+
+    desenhaQuadrado(50,0,"darkgreen");
+    desenhaBorda(50,0,"black");
+
+    desenhaQuadrado(100,0,"darkgreen");
+    desenhaBorda(100,0,"black");
+    desenhaBorda(150,0,"black");
+
+
+</script>
