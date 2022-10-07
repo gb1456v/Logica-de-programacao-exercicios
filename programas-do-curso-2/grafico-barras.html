@@ -29,13 +29,16 @@
         var alturaSomada = 0;
         for(i = 0; i < serie.length;i++) { 
             var altura = serie[i];
-            // 50
-            // 25
-            // 20 
-            // 5
-
-          
+            //percorre o array
+            // 0 - 50
+            // 1 - 25
+            // 2 - 20 
+            // 3 - 5
             desenhaRetangulo(x, y + alturaSomada, 50, altura,cores[i]);  
+            // x, y, 0 , 50 , 0, "blue"
+            // x, y, (0 + 50), 50 , 25 , "green"
+            // x, y, (25 + 50=75),50, 20, "yellow" 
+            // x, y, (75 + 20=95), 50, 5, "red"
             var alturaSomada = altura + alturaSomada;
             // 0 + 50
             //25 + 50
