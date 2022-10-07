@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <canvas width="800" height="600"></canvas>
+    </body>
+    <script>
+        var tela = document.querySelector("canvas");
+        var pincel = tela.getContext("2d");
+        // criando tela e pincel
+        function desenhaQuadrado() {
+            pincel.fillStyle = "gray";
+            pincel.fillRect(0,0,600,400);
+            pincel.fill();
+        }
+        // função para desenhar quadrado
+        function desenhaBolinha(evento) {
+            var x = evento.pageX - tela.offsetLeft;
+            var y = evento.pageY - tela.offsetTop;
+            // captura a posição do mouse
+            pincel.fillStyle = "darkblue";
+            pincel.beginPath();
+            pincel.arc(x , y , 10, 0 , 2 * 3.14);
+            pincel.fill();
+        }
+        // função para capturar as coordenadas do mouse e desenhar uma bolinha ao clicar
+        desenhaQuadrado();
+        tela.onclick = desenhaBolinha;
+    </script>
+</html>
